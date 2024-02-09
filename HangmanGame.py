@@ -1,6 +1,7 @@
 import tkinter as tk
 import random
 import hangman_word_list
+import emoji
 
 # Initialize tkinter
 root = tk.Tk()
@@ -81,7 +82,7 @@ hints_used = 0
 
 # Label to display word
 word_label = tk.Label(root, text=" ".join(display), font=("Arial", 18))
-word_label.grid(row=0, column=0, columnspan=3)
+word_label.pack(anchor=tk.CENTER)
 
 # Function to handle guess
 def guess_letter():
@@ -137,31 +138,31 @@ def end_game(message):
 
 # Entry for guessing letters
 guess_entry = tk.Entry(root, font=("Arial", 14))
-guess_entry.grid(row=1, column=0, columnspan=2)
+guess_entry.pack(anchor=tk.CENTER)
 
 # Button to submit guess
 guess_button = tk.Button(root, text="Guess", command=guess_letter)
-guess_button.grid(row=1, column=2)
+guess_button.pack(anchor=tk.CENTER)
 
 # Button to get hint
 hint_button = tk.Button(root, text="Hint", command=give_hint)
-hint_button.grid(row=2, column=0, columnspan=2)
+hint_button.pack(anchor=tk.CENTER)
 
 # Label for guessed letters
 guessed_label = tk.Label(root, text="Guessed Letters: ", font=("Arial", 14))
-guessed_label.grid(row=3, column=0, columnspan=3)
+guessed_label.pack(anchor=tk.CENTER)
 
 # Label for hint
 hint_label = tk.Label(root, text="", font=("Arial", 14))
-hint_label.grid(row=4, column=0, columnspan=3)
+hint_label.pack(anchor=tk.CENTER)
 
 # Label for hangman stages
 hangman_label = tk.Label(root, text="", font=("Arial", 14))
-hangman_label.grid(row=5, column=0, columnspan=3)
+hangman_label.pack(anchor=tk.CENTER)
 
 # Label for end game message
 end_label = tk.Label(root, text="", font=("Arial", 18))
-end_label.grid(row=6, column=0, columnspan=3)
+end_label.pack(anchor=tk.CENTER)
 
 # Run the GUI
 root.mainloop()
